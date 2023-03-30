@@ -4,4 +4,4 @@
 
 # 사용된 라이브러리
 
-(쇼다운js (마크다운을 html로 변형))[https://github.com/showdownjs/showdown]
+[쇼다운js (마크다운을 html로 변형)](https://github.com/showdownjs/showdown)
