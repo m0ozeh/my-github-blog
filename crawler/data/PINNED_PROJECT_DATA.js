@@ -1,1 +1,0 @@
-export default [{"repoTitle":"boj-ranker","repoDesc":"백준 랭작을 해봅시다.","repoLang":"C++"},{"repoTitle":"inventory-parse","repoDesc":"Check inventory items which you want, Change player's inventory item where the specific item is.","repoLang":"mcfunction"},{"repoTitle":"m0ozeh.github.io","repoDesc":"My Github Page","repoLang":"HTML"}]

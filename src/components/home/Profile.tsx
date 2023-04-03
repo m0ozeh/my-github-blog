@@ -1,13 +1,11 @@
 import styled from "styled-components";
+import userdata from "../../../crawler/data/userdata";
 
 const Wrap = styled.div`
-  width:250px;
-  margin-right:50px;
-  margin-bottom:30px;
   display:flex;
   justify-content:space-between;
   flex-direction:column;
-  float:left;
+  gap:10px;
 `
 const Img = styled.img`
   width:125px;
@@ -15,20 +13,26 @@ const Img = styled.img`
   border-radius:50%;
 `
 
-const GappedP = styled.p`
-  margin-top:10px;
+const Name = styled.div`
+  
+`
+
+const Desc = styled.p`
+  color:var(--desc-color);
+  margin-top:5px;
 `
 
 const Profile = () => {
-  return <Wrap>
+  return <>
     <h2>Profile</h2>
-    <Img src="https://avatars.githubusercontent.com/u/65532873?v=4" alt="Profile_Picture" />
-    <div>
-      <h3>m0ozeh</h3>
-      <GappedP>너무 심심한 하루이다.</GappedP>
-    </div>
-    
-  </Wrap>
+    <Wrap>
+      <Img src="https://avatars.githubusercontent.com/u/65532873?v=4" alt="Profile_Picture" />
+      <div>
+        <Name>m0ozeh</Name>
+        <Desc>{userdata.bio}</Desc>
+      </div>
+    </Wrap>
+  </>
 }
 
 export default Profile;

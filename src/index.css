@@ -1,66 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 
+/*
+
+Sets globally constants / styles and layout.
+
+*/
+
+/* Global Settings */
 :root {
     --primary-color: #000000;
     --secondary-color: #222222;
+    --desc-color:#505050;
     --comment-color: #888888;
     --selection-color:#00000041;
+
     /* --dark-primary-color: #FFFFFF; */
-    --size-large: 1.2rem;
+
+    /*
+    Layout variables 
+    반응형 쿼리 추가 시 다른 곳에 작성함
+    */
+
+    --layout-width: 1100px;
+    --layout-left-width: 250px;
+    --layout-right-width:750px;
 }
 
 * {
     font-family: 'Noto Sans KR';
-    
 }
+
 *::selection {
     background:var(--selection-color);
 }
-h1,
-h2,
-h3,
-h4 {
-    margin: 10px 0;
-    padding: 0;
-    color: var(--primary-color);
-}
 
-h5,
-h6,
-p {
+html, body {
     margin: 0;
     padding: 0;
-    color: var(--secondary-color);
+}
+
+html::-webkit-scrollbar {
+    width:5px;
+    background-color:#222222;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:#aaaaaa;
 }
 
 h1 {
-    font-weight: 600;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 500;
-}
-
-p {
-    font-weight: 400;
-}
-
-h1 {
-    font-size: 1.3rem;
+    font-size:20px;
+    font-weight:700;
 }
 
 h2 {
-    font-size: 1.3rem;
+    font-size:18px;
+    font-weight:600;
 }
 
-h3 {
-    font-size: 1.2rem;
-}
-
-body {
-    margin: 0;
+h3, h4, h5, h6 {
+    font-size:16px;
+    font-weight:500;
 }

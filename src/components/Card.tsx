@@ -1,10 +1,4 @@
-import styled from "styled-components";
-
-const Border = styled.div`
-  border:1px solid #888888;
-  border-radius: 30px;
-  padding:1rem;
-`
+import { Border } from "../theme";
 
 const Card = ({children}:any) => {
   return <Border>

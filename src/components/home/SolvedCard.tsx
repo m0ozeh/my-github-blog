@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 const Wrap = styled.div`
-  width:300px;
+  width:45%;
   float:right;
 `
 const Img = styled.img`
-  width:inherit;
+  width:100%;
 `
 
 const SolvedCard = ():JSX.Element => {

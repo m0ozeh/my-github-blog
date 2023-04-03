@@ -2,7 +2,7 @@ import styled from "styled-components";
 import HomeLogo from "./HomeLogo";
 import MenuList from "./MenuList";
 
-const HeaderNav = styled.div`
+const Content = styled.div`
   /* Header */
   * {
     -webkit-user-select: none;
@@ -22,7 +22,7 @@ const HeaderNav = styled.div`
 
 const FlexBox = styled.div`
   margin:0 auto;
-  width: 1100px;
+  width: var(--layout-width);
   height:100%;
   display: flex;
   flex-direction: row;
@@ -32,12 +32,12 @@ const FlexBox = styled.div`
 `;
 
 const Header = (): JSX.Element => {
-  return <HeaderNav>
+  return <Content>
     <FlexBox>
       <HomeLogo />
       <MenuList/>
     </FlexBox>
-  </HeaderNav>
+  </Content>
 }
 
 export default Header;

@@ -4,7 +4,9 @@ import Profile from "./Profile";
 import ProjectWrap from "./ProjectWrap";
 import SolvedCard from "./SolvedCard";
 
-const HomeWrap = styled.div`
+import { Title } from "../../theme";
+
+const Content = styled.div`
   * {
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -12,35 +14,44 @@ const HomeWrap = styled.div`
     -o-user-select: none;
     user-select: none;
   }
-  width: 1100px;
+  width: var(--layout-width);
   margin: 3rem auto auto auto;
 `
 
-const ProfileWrap = styled.div`
-  width:250px;
-  margin-right:65px;
+const LayoutLeft = styled.div`
+  width:var(--layout-left-width);
   display:flex;
   justify-content:space-between;
   flex-direction:column;
   float:left;
 `
 
+const LayoutRight = styled.div`
+  width:var(--layout-right-width);
+`
+
 const MainWrap = styled.div`
-  width:1100px;
+  display:flex;
+  justify-content:space-between;
 `
 
 const Home = (): JSX.Element => {
-  return <HomeWrap className="font-bold">
-    <h1>#Home</h1>
+  return <Content>
+    <Title>#Home</Title>
     <MainWrap>
-      <ProfileWrap>
+
+      <LayoutLeft>
         <Profile />
         <Category />
-      </ProfileWrap>
-      <ProjectWrap />
-      <SolvedCard />
+      </LayoutLeft>
+      
+      <LayoutRight>
+        <ProjectWrap />
+        <SolvedCard />
+      </LayoutRight>
+
     </MainWrap>
-  </HomeWrap>
+  </Content>
 }
 
 export default Home;

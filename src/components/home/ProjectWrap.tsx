@@ -1,20 +1,19 @@
 import styled from "styled-components";
 import Project from "./Project";
-import {FetchInstance} from "../../js/FetchInstance"
+import PINNED_PROJECT_DATA from "../../../crawler/data/PINNED_PROJECT_DATA";
 
 const Wrap = styled.div`
-  width:400px;
+  width:50%;
   float:left;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 `
 
 const ProjectWrap = () => {
-  new FetchInstance("https://github.com/m0ozeh", false);
+  
   return <Wrap>
     <h2>Pinned Projects</h2>
-    <Project />
+    <Project projects={PINNED_PROJECT_DATA}/>
   </Wrap>
 }
 

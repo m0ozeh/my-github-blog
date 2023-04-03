@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const LogoSpan = styled.span`
+const Span = styled.span`
   cursor:pointer;
   font-style: normal;
-  font-size: var(--size-large);
+  font-size: 1.2rem;
   line-height: 52px;
 `
 
-const LogoStrong = styled.span`
+const Strong = styled.span`
   background: linear-gradient(90.92deg, #0058A9 0%, #020006 100%);
   background-clip:text;
   -webkit-background-clip: text;
@@ -16,14 +16,14 @@ const LogoStrong = styled.span`
 `
 
 const HomeLogo = () => {
-  return <LogoSpan>
+  return <Span>
     <a href="./">
-      <LogoStrong>
+      <Strong>
         m0ozeh
-      </LogoStrong>
+      </Strong>
       .github.io
     </a>
-  </LogoSpan>
+  </Span>
 }
 
 export default HomeLogo;
