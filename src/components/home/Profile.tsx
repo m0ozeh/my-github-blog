@@ -1,38 +1,67 @@
 import styled from "styled-components";
-import userdata from "../../../crawler/data/userdata";
+import UserBio from "../../../crawler/data/UserBio";
+import { Title } from "../../theme";
+import SolvedCard from "./SolvedCard";
+
+const Profile = () => {
+  return <div>
+    <Title>Profile</Title>
+    <Wrap>
+      <Img src="https://avatars.githubusercontent.com/u/65532873?v=4" alt="Profile_Picture" />
+      <Paragraph>
+        <div>
+          <Name>m0ozeh</Name>
+          <UnderLine></UnderLine>
+          <Tags>#Front-End_Developer #WebGL_User #Studying_DeepLearning</Tags>
+        </div>
+        <Desc>{UserBio.bio}</Desc>
+      </Paragraph>
+      <SolvedCard />
+    </Wrap>
+  </div>
+}
+
 
 const Wrap = styled.div`
+  * {
+    font-weight:var(--regular);
+  }
   display:flex;
-  justify-content:space-between;
-  flex-direction:column;
-  gap:10px;
+  height:125px;
+  gap:30px;
+  flex-direction:row;
+  margin:0 auto;
+  justify-content:center;
+  align-items:center;
 `
 const Img = styled.img`
-  width:125px;
-  margin:10px 0;
+  height:inherit;
   border-radius:50%;
 `
 
 const Name = styled.div`
-  
+  font-weight:var(--medium);
 `
 
+const Paragraph = styled.div`
+  width:500px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  height:inherit;
+`
+
+const UnderLine = styled.div`
+  background-color:var(--comment-color);
+  height:1px;
+  width:100%;
+`
+const Tags = styled.div`
+  color:var(--comment-color);
+`
 const Desc = styled.p`
-  color:var(--desc-color);
+  color:var(--secondary-color);
   margin-top:5px;
 `
-
-const Profile = () => {
-  return <>
-    <h2>Profile</h2>
-    <Wrap>
-      <Img src="https://avatars.githubusercontent.com/u/65532873?v=4" alt="Profile_Picture" />
-      <div>
-        <Name>m0ozeh</Name>
-        <Desc>{userdata.bio}</Desc>
-      </div>
-    </Wrap>
-  </>
-}
 
 export default Profile;

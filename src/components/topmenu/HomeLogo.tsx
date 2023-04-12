@@ -1,4 +1,18 @@
-import styled from "styled-components";
+import styled from "styled-components"
+import {Link} from "react-router-dom"
+
+const HomeLogo = () => {
+  return <Span>
+    <Link to="/">
+      <Strong>
+        m0ozeh
+      </Strong>
+      .github.io
+    </Link>
+  </Span>
+}
+
+export default HomeLogo;
 
 const Span = styled.span`
   cursor:pointer;
@@ -14,16 +28,3 @@ const Strong = styled.span`
   -webkit-text-fill-color: transparent;
   font-weight: 700;
 `
-
-const HomeLogo = () => {
-  return <Span>
-    <a href="./">
-      <Strong>
-        m0ozeh
-      </Strong>
-      .github.io
-    </a>
-  </Span>
-}
-
-export default HomeLogo;
