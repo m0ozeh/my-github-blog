@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Theme from "../../assets/theme-icon.svg"
 import Menu from "../../assets/menu.svg";
+import { Link } from "react-router-dom";
 
 const List = styled.ul`
   display: flex;
@@ -24,9 +25,9 @@ const Svg = styled.img`
 const MenuList = () : JSX.Element => {
   return <List>
     <Item>
-      <a href="./all">
+      <Link to="./all">
         All
-      </a>
+      </Link>
     </Item>
     <Item>
       <a href="https://github.com/m0ozeh">
