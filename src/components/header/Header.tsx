@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import HeaderCategoryList from "./HeaderCategoryList";
+import BackgroundImg from "../../assets/heading.png";
 
 const Header = () => {
   return <Wrap>
@@ -18,7 +19,7 @@ const Header = () => {
 const Wrap = styled.div`
   width:100%;
   height:280px;
-  background:url("/src/assets/heading.png");
+  background:url(${BackgroundImg});
   background-position: center;
   background-position: 50% 25%;
   * {
