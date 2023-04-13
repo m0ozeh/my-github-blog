@@ -102,7 +102,8 @@ async function getPost(dir) {
                     path: fileDir + fileName,
                     ctime: fileData.ctime,
                     mtime: fileData.mtime,
-                    title: `[${dirName}] ` + fileName.replace(".md", ""),
+                    title: fileName.replace(".md", ""),
+                    category: dirName,
                 };
 
                 return itemObj;

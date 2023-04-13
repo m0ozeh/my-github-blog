@@ -5,6 +5,7 @@ type SinglePostData = {
     title:string;
     ctime:string;
     mtime:string;
+    category:string;
 };
 
 function getAllPostList(): SinglePostData[] {
