@@ -4,6 +4,8 @@ const Img = styled.img`
   height:inherit;
 `
 const ImgWrap = styled.div`
+  user-select:none;
+  -webkit-user-drag:none;
   height:inherit;
   min-width:257.344px;
 `

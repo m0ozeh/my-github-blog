@@ -134,7 +134,7 @@ const ProjectCard = styled(Card)`
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-
+  user-select:none;
   height:calc(120px - 2px);
   width:calc(400px);
 `
