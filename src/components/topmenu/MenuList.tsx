@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import Theme from "../../assets/theme-icon.svg"
 import Menu from "../../assets/menu.svg";
-import { Link } from "react-router-dom";
 
 const List = styled.ul`
   display: flex;
   flex-direction: row;
-  width: 15rem;
+  width: 200px;
   justify-content: space-between;
   font-style: normal;
   font-weight: 700;
@@ -25,21 +24,17 @@ const Svg = styled.img`
 const MenuList = () : JSX.Element => {
   return <List>
     <Item>
-      <Link to="./all">
-        All
-      </Link>
-    </Item>
-    <Item>
       <a href="https://github.com/m0ozeh">
         Github
       </a>
     </Item>
     <Item>
-      <Svg src={Menu} />
-    </Item>
-    <Item>
       <Svg src={Theme}/>
     </Item>
+    <Item>
+      <Svg src={Menu} />
+    </Item>
+    
   </List>
 }
 
