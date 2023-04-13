@@ -9,12 +9,17 @@ const Home = (): JSX.Element => {
     <Profile />
     <PinnedProject />
     <All />
+    <Footer/>
   </Content>
 }
 
 const Content = styled.div`
   width:var(--content-width);
   margin:0 auto;
+`
+
+const Footer = styled.div`
+  height:20px;
 `
 
 export default Home;
