@@ -9,7 +9,9 @@
 - React
 - React Router
 - React Styled Components
-- Showdown : 마크다운 파일을 html로 변형
+- React Markdown : 마크다운 스트링을 HTML요소로 파싱해서 보여줌
+- Github Markdown css : 깃허브 마크다운 스타일링을 적용시켜줌
+- Redux : 포스트 정보 관리를 최적화 하기 위해 사용
 - cheerio : nodejs 크롤러 패키지
 - typescript
 - Vite : 리액트 프로젝트 빌드 도구

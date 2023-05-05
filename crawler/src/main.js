@@ -2,15 +2,20 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
 import * as fs from "node:fs";
+import MarkdownParser from "./MarkdownParser.js";
 
 const PROJECT_DATA_NAME = "PinnedProject.ts";
 const USER_BIO_NAME = "UserBio.ts";
 const POST_DATA_NAME = "PostData.ts";
+const OUTPUT_PATH = "./data";
+const POST_PATH = "../posts";
+const GITHUB_URL = "https://github.com/";
+const MY_GITHUB_URL = GITHUB_URL + "m0ozeh/";
 
 (async function main() {
-    writeJsonToFile("./data", PROJECT_DATA_NAME, await fetchPinnedProject());
-    writeJsonToFile("./data", USER_BIO_NAME, await fetchUserBio());
-    writeJsonToFile("./data", POST_DATA_NAME, await getPost("../posts"));
+    writeJsonToFile(OUTPUT_PATH, PROJECT_DATA_NAME, await fetchPinnedProject());
+    writeJsonToFile(OUTPUT_PATH, USER_BIO_NAME, await fetchUserBio());
+    writeJsonToFile(OUTPUT_PATH, POST_DATA_NAME, await getPost(POST_PATH));
 })();
 
 function writeJsonToFile(dir, filename, jsondata) {
@@ -39,7 +44,7 @@ function removeBlankAndLine(str) {
 }
 
 async function fetchPinnedProject() {
-    const response = await fetchResponse("https://github.com/m0ozeh");
+    const response = await fetchResponse(MY_GITHUB_URL);
 
     const $ = cheerio.load(response.data);
     const projectList = [];
@@ -50,7 +55,7 @@ async function fetchPinnedProject() {
     const titleClass = "span.repo";
     const descClass = ".pinned-item-desc";
     const langClass = "span[itemprop='programmingLanguage']";
-    const repoLinkHost = "https://github.com/";
+    const repoLinkHost = GITHUB_URL;
 
     $(pinnedProjectClass).each((i, el) => {
         const doc = cheerio.load($(el).html().toString());
@@ -66,9 +71,9 @@ async function fetchPinnedProject() {
         if (owner !== "") {
             resultObj.repoTitle = owner + "/" + resultObj.repoTitle;
 
-            resultObj.repoLink = repoLinkHost + resultObj.repoTitle;
+            resultObj.repoLink = GITHUB_URL + resultObj.repoTitle;
         } else {
-            resultObj.repoLink = repoLinkHost + "m0ozeh/" + resultObj.repoTitle;
+            resultObj.repoLink = MY_GITHUB_URL + resultObj.repoTitle;
         }
 
         projectList.push(resultObj);
@@ -78,7 +83,7 @@ async function fetchPinnedProject() {
 }
 
 async function fetchUserBio() {
-    const res = await fetchResponse("https://github.com/m0ozeh");
+    const res = await fetchResponse(MY_GITHUB_URL);
 
     return { bio: cheerio.load(res.data)("div.user-profile-bio").text() };
 }
@@ -104,6 +109,7 @@ async function getPost(dir) {
                     mtime: fileData.mtime,
                     title: fileName.replace(".md", ""),
                     category: dirName,
+                    // body: new MarkdownParser(fileDir + fileName).getHTMLContent()
                 };
 
                 return itemObj;
