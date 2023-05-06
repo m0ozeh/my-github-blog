@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import HomeLogo from "./HomeLogo";
-import MenuList from "./MenuList";
+import NavBarLogo from "./NavBarLogo";
+import NavBarMenu from "./NavBarMenu";
 
 const TopMenu = () => {
   return <Content>
     <FlexBox>
-      <HomeLogo />
-      <MenuList/>
+      <NavBarLogo />
+      <NavBarMenu/>
     </FlexBox>
   </Content>
 }

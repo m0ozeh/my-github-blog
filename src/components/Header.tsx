@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HeaderCategoryList from "./HeaderCategoryList";
-import BackgroundImg from "../../assets/heading.png";
+import BackgroundImg from "../assets/heading.png";
 
 const Header = () => {
   return <Wrap>

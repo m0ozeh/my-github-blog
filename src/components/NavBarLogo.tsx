@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import {Link} from "react-router-dom"
 
-const HomeLogo = () => {
+const NavBarLogo = () => {
   return <Span>
     <Link to="/">
       <Strong>
@@ -12,7 +12,7 @@ const HomeLogo = () => {
   </Span>
 }
 
-export default HomeLogo;
+export default NavBarLogo;
 
 const Span = styled.span`
   cursor:pointer;

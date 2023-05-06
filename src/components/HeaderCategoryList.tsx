@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { getCategoryTitle } from "../../ts/Postdata";
+// import { getCategoryTitle } from "../ts/Postdata";
 
 const CategoryList = () => {
-  const categories = getCategoryTitle();
+  // const categories = getCategoryTitle();
   return <Wrap>
     <CatList>
-      {categories.map((value, idx) => {
+      {/* {categories.map((value, idx) => {
         return <li key={idx}>
           {`${value.title} (${value.postCount})`}
         </li>
-      })}
+      })} */}
     </CatList>
   </Wrap>
 }

@@ -1,18 +1,19 @@
 import './index.css'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './components/home/Home'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import TopMenu from './components/topmenu/TopMenu'
-import Header from './components/header/Header'
+import TopMenu from './components/NavBar'
+import Header from './components/Header'
 import NotFound from './components/NotFound'
-import PostRouter from './components/article/PostRouter'
+import PostMain from './components/post/PostMain'
 
 function App(): JSX.Element {
   return <BrowserRouter>
     <TopMenu />
     <Header />
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/post/*" element={<PostRouter />}/>
+      <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/post/*" element={<PostMain />}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>

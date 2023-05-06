@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Theme from "../../assets/theme-icon.svg"
-import Menu from "../../assets/menu.svg";
+import Theme from "../assets/theme-icon.svg"
+import Menu from "../assets/menu.svg";
 
 const List = styled.ul`
   display: flex;
@@ -21,7 +21,7 @@ const Svg = styled.img`
   height:1rem;
 `
 
-const MenuList = () : JSX.Element => {
+const NavBarMenu = () : JSX.Element => {
   return <List>
     <Item>
       <a href="https://github.com/m0ozeh">
@@ -38,4 +38,4 @@ const MenuList = () : JSX.Element => {
   </List>
 }
 
-export default MenuList;
+export default NavBarMenu;
