@@ -13,7 +13,7 @@ function App(): JSX.Element {
     <Routes>
       <Route path="/" element={<Navigate to="/home" replace />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/post/*" element={<PostMain />}/>
+      <Route path="/post/:category/:id" element={<PostMain />}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>

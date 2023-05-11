@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HeaderCategoryList from "./HeaderCategoryList";
+import HeaderCategoryList from "./HeaderCategory";
 import BackgroundImg from "../assets/heading.png";
 
 const Header = () => {

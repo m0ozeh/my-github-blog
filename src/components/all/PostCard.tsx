@@ -1,31 +1,37 @@
-import { Card } from "../../../theme";
-import PlaceholderImg from "../../../assets/heading.png";
+import { Card } from "../../theme";
+import PlaceholderImg from "../../assets/heading.png";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const PostCard = ({ index, post }:any) => {
-  const postDateObj = new Date(post.ctime);
-  const postMonth = postDateObj.getMonth();
-  const postDay = postDateObj.getDay();
-  const postYear = postDateObj.getFullYear();
+interface PostCardProp {
+  id:number,
+  category:string,
+  postTitle:string
+}
 
-  return <PostCardWrap key={index}>
+const PostCard = ({ id, postTitle, category }:PostCardProp) => {
+  // const postDateObj = new Date(post.ctime);
+  // const postMonth = postDateObj.getMonth();
+  // const postDay = postDateObj.getDay();
+  // const postYear = postDateObj.getFullYear();
+
+  return <PostCardWrap>
     <div>
       <PostThumb src={PlaceholderImg} />
       <PostTitle>
-        {post.title}
+        {postTitle}
       </PostTitle>
       <div>
         <PostCategory>
-          {'#' + post.category}
+          {'#' + category}
         </PostCategory>
-        <PostDate>
+        {/* <PostDate>
           {`${postMonth} 월 ${postDay} 일, ${postYear}년`}
-        </PostDate>
+        </PostDate> */}
       </div>
     </div>
     <PostDetail>
-      <Link to={""}>자세히 보기</Link>
+      <Link to={`/post/${category}/${id}`}>자세히 보기</Link>
     </PostDetail>
   </PostCardWrap>
 }

@@ -3,9 +3,9 @@ import { Paragraph, Title } from "../theme";
 
 const NotFound = () => {
   return <NotFoundWrap>
-    <Title>404 Not Found</Title>
+    <Title>엇?!</Title>
     <Paragraph>
-      Sorry, there is no page that you want.
+      죄송합니다, 찾으시는 페이지가 없는 것 같습니다.
     </Paragraph>
   </NotFoundWrap>
 }

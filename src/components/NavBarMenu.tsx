@@ -21,7 +21,7 @@ const Svg = styled.img`
   height:1rem;
 `
 
-const NavBarMenu = () : JSX.Element => {
+const NavBarMenu = () => {
   return <List>
     <Item>
       <a href="https://github.com/m0ozeh">
